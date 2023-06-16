@@ -1,0 +1,11 @@
+# the basics
+*~
+**/.DS_Store
+**/._.DS_Store
+
+# python
+__init__.pyc
+__pycache__/
+
+# pip
+dist/

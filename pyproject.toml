@@ -1,0 +1,88 @@
+#####
+# A hatchling based setup module.
+#
+# See:
+# https://packaging.python.org/en/latest/
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/
+# https://hatch.pypa.io/latest/
+#
+# language: python3
+# author: Elmar Bucher
+# date: 2023-06-16
+# license: BSD-3-Clause
+#
+# description:
+#     a simple, pip installable gateway module to the pcdl module.
+#
+# releasing a next version on pypi:
+# 0. # increase version number below
+# 2. git commit -m'@ pcDataLoader : pcdl python3 module bridge.'
+# 3. git tag -a v0.0.0 -m'version 0.0.0'
+# 4. rm -r dist
+# 6. python3 -m build --sdist  # make source distribution
+# 7. python3 -m build --wheel  # make binary distribution python wheel
+# 8. twine upload dist/* --verbose
+# 9. git push origin master
+# 10. git push --tag
+#####
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+# name of the project
+# pip install pcDataLoader
+# import pcDataLoader as pc
+name = "pcDataLoader"
+version = "3.2.0"
+
+description = 'LOAD "pcdl",8,1'
+requires-python = ">=3.6, <4"
+
+license = "BSD-3-Clause"
+#license-files = {paths = ["LICENSE"]}
+
+authors = [
+  {name="Elmar Bucher", email="epbucher@iu.edu"}
+]
+maintainers = [
+  {name="Elmar Bucher", email="epbucher@iu.edu"}
+]
+
+keywords = [
+    "analysis",
+    "data",
+    "physicell",
+    "python3",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+dependencies = [
+    "pcdl",
+]
+
+
+[project.urls]
+"Homepage lab" = "http://www.mathcancer.org/"
+"Homepage project" = "http://physicell.org/"
+Hompage = "https://github.com/elmbeech/physicelldataloader"
+Documentation = "https://github.com/elmbeech/physicelldataloader/tree/master/man"
+Issues = "https://github.com/elmbeech/physicelldataloader/issues"
+Source = "https://github.com/elmbeech/physicelldataloader"
+
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/pcDataLoader",
+]
+
